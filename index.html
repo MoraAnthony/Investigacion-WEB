@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investigaciones 1–3 | SEO, Usabilidad/DCU y WCAG – Ejemplo práctico</title>
+  <meta name="description" content="Página de ejemplo que implementa SEO técnico, principios de usabilidad y DCU, y los 4 principios WCAG (POUR) con ejemplos prácticos." />
+  <meta name="theme-color" content="#0b5394" />
+
+  <!-- ======== SEO TÉCNICO: Open Graph & Twitter Cards ======== -->
+    <!-- define la clasificacion, adaptabilidad a moviles y descripcion del sitio  -->
+  <meta property="og:title" content="Investigaciones 1–3 | SEO, Usabilidad/DCU y WCAG – Ejemplo práctico" />
+  <meta property="og:description" content="Implementación práctica en una sola página: SEO técnico (OG/Twitter/JSON-LD), Usabilidad (consistencia, eficiencia, minimalismo) y WCAG (POUR)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ejemplo-utn.local/investigaciones" />
+  <meta property="og:image" content="assets/portada.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Investigaciones 1–3 | SEO, Usabilidad/DCU y WCAG – Ejemplo práctico" />
+  <meta name="twitter:description" content="Ejemplo práctico completo para entrega académica." />
+  <meta name="twitter:image" content="assets/portada.webp" />
+
+  <!-- ======== SEO TÉCNICO: Datos estructurados (JSON-LD) ======== -->
+    <!-- Informa a Google  que la pagina trata sobre "SEO", "Usabilidad" y "WCAG"" -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.1org",
+    "@type": "WebPage",
+    "name": "Investigaciones 1–3: SEO, Usabilidad/DCU y WCAG – Ejemplo práctico",
+    "description": "Implementación práctica de SEO técnico, usabilidad/DCU y WCAG.",
+    "about": [
+      {"@type":"Thing","name":"SEO"},
+      {"@type":"Thing","name":"Usabilidad"},
+      {"@type":"Thing","name":"WCAG"}
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "UTN – Curso Diseño de Aplicaciones Web"
+    }
+  }
+  
+  </script>
+<!-- hace conexion con la clase style.css-->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+
+<body>
+
+  <!-- ========= Operable: Skip link / navegación por teclado ========= -->
+   <!-- Muestra el nombre de la universidad, la sección del curso y un menú con enlaces internos.
+Cada enlace lleva a una sección específica del contenido. -->
+  <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+  <header role="banner">
+    <div class="container nav" aria-label="Barra de navegación principal">
+      <div>
+        <strong>UTN · Investigaciones 1–3</strong>
+        <p class="lead" id="slogan">SEO · Usabilidad/DCU · WCAG</p>
+      </div>
+      <nav aria-label="Principal">
+        <a href="#seo">SEO técnico</a>
+        <a href="#usabilidad">Usabilidad & DCU</a>
+        <a href="#wcag">WCAG (POUR)</a>
+
+        <!--Da acceso rápido al campo de búsqueda con Alt + K (principio de Eficiencia).-->
+        <button class="btn secondary" id="atajo" type="button" title="Atajo de teclado: Alt+K">Foco en búsqueda <span class="kbd">Alt</span>+<span class="kbd">K</span></button>
+      </nav>
+    </div>
+  </header>
+
+  
+  <main id="contenido" class="container" role="main">
+    <h1>SEO, DCU, WCAG</h1>
+    <p class="lead">Esta página demuestra <strong>SEO técnico</strong> (metadatos, OG/Twitter, JSON‑LD, imágenes optimizadas), <strong>Usabilidad/DCU</strong> (consistencia, eficiencia y diseño minimalista) y <strong>WCAG</strong> (Perceptible, Operable, Comprensible y Robusto) con ejemplos de buena y mala práctica.</p>
+
+    <!-- ======Iniciamos en la  INVESTIGACIÓN 1 –SEO ======================= -->
+    <section id="seo" aria-labelledby="seo-title">
+      <h2 id="seo-title"> · SEO y Rendimiento</h2>
+      <div class="grid cols-2">
+        <article class="card good" aria-labelledby="seo-good-h3">
+          <h3 id="seo-good-h3">Buenas prácticas de SEO técnico</h3>
+          <ul>
+            <li>Encabezados jerárquicos (<code>&lt;h1&gt;–&lt;h3&gt;</code>) y <em>landmarks</em> (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>).</li>
+            <li>Metadatos OG/Twitter y <strong>JSON-LD</strong> (estructura entendible por buscadores).</li>
+            <li>Imágenes con <code>alt</code>, <code>loading="lazy"</code> y formatos modernos (<strong>WebP</strong>).</li>
+          </ul>
+          <figure>
+            <picture>
+              <source srcset="assets/portada.webp" type="image/webp" />
+              <img src="assets/portada.jpg" alt="Portada temática con iconos de SEO, accesibilidad y usabilidad" loading="lazy" width="960" height="540" />
+            </picture>
+            <figcaption>Imagen optimizada (alt + lazy + WebP).</figcaption>
+          </figure>
+        </article>
+        <article class="card bad" aria-labelledby="seo-bad-h3">
+          <h3 id="seo-bad-h3">Malas prácticas comunes</h3>
+          <ul>
+            <li>Imágenes pesadas sin <code>alt</code> ni compresión.</li>
+            <li>Ausencia de metadatos sociales (previews pobres al compartir).</li>
+            <li>Contenido sin estructura (un solo <code>&lt;div&gt;</code> para todo).</li>
+          </ul>
+          <div class="alert info" role="note">Este panel es solo ilustrativo para la <em>mala práctica</em>; la página real sí implementa las optimizaciones.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =================== INVESTIGACIÓN 2 – USABILIDAD/DCU =================== -->
+      <!-- En estas lines de ve reflejado el uso de USABILIDAD/DCU =================== -->
+    <section id="usabilidad" aria-labelledby="ux-title">
+      <h2 id="ux-title"> · Usabilidad & Diseño Centrado en el Usuario (DCU)</h2>
+
+      <article class="card" aria-labelledby="consistencia-h3">
+        <h3 id="consistencia-h3">Consistencia y Estándares</h3>
+        <p>Se define un <strong>estilo consistente</strong> para botones, tipografías y espaciados. Todos los CTA usan la clase única <code>.btn</code>.</p>
+        <button class="btn" type="button">Acción principal</button>
+        <button class="btn secondary" type="button">Acción secundaria</button>
+      </article>
+
+      <article class="card" aria-labelledby="eficiencia-h3">
+        <h3 id="eficiencia-h3">Flexibilidad y Eficiencia de Uso</h3>
+        <p>Se ofrece <strong>atajo de teclado</strong> (<span class="kbd">Alt</span>+<span class="kbd">K</span>) para enfocar la búsqueda y <strong>autocompletado</strong> en formularios.</p>
+        <label for="q" class="sr-only">Buscar</label>
+        <input id="q" name="q" type="search" placeholder="Buscar…" autocomplete="on" class="input" />
+        <p class="lead">Tip: Presiona <span class="kbd">Alt</span>+<span class="kbd">K</span> para ir al campo.</p>
+      </article>
+
+      <article class="card" aria-labelledby="minimal-h3">
+        <h3 id="minimal-h3">Estética y Diseño Minimalista</h3>
+        <p>Interfaz limpia con <strong>jerarquía visual</strong> y foco en el contenido esencial. Uso de espacio en blanco, contrastes adecuados y texto breve.</p>
+      </article>
+    </section>
+
+    <!-- ===================== INVESTIGACIÓN 3 – WCAG (POUR) ===================== -->
+      <!-- accesibilidad web  y tambien mencionamos los principios de WCAG -->
+    <section id="wcag" aria-labelledby="wcag-title">
+      <h2 id="wcag-title">· WCAG – Principios POUR con ejemplos</h2>
+      <div class="grid cols-2">
+        <article class="card" aria-labelledby="perceptible-h3">
+          <h3 id="perceptible-h3">Perceptible</h3>
+          <ul>
+            <li>Texto alternativo significativo en imágenes.</li>
+            <li>Subtítulos en video y estructura semántica.</li>
+          </ul>
+          <figure>
+            <img src="assets/grafico.webp" alt="Gráfico de barras comparando rendimiento antes y después de optimizaciones" loading="lazy" width="640" height="360" />
+            <figcaption>Contenido visual con <code>alt</code> descriptivo.</figcaption>
+          </figure>
+        </article>
+
+        <article class="card" aria-labelledby="operable-h3">
+          <h3 id="operable-h3">Operable</h3>
+          <p>Navegación por teclado y foco visible. Enlace para <em>“Saltar al contenido”</em> al inicio de la página.</p>
+          <button class="btn" id="demo-foco" type="button">Mostrar foco</button>
+        </article>
+
+        <article class="card" aria-labelledby="comprensible-h3">
+          <h3 id="comprensible-h3">Comprensible</h3>
+          <form id="frm" novalidate aria-describedby="nota-form">
+            <p id="nota-form" class="lead">Los campos con * son obligatorios.</p>
+            <label for="email">Correo electrónico *</label>
+            <input id="email" name="email" type="email" required aria-describedby="ayuda-email err-email" class="input" />
+            <small id="ayuda-email">Ej.: nombre@dominio.com</small>
+            <div id="err-email" class="alert err" role="alert" aria-live="polite"></div>
+            <div class="mt"><button class="btn" type="submit">Enviar</button></div>
+          </form>
+        </article>
+
+        <article class="card" aria-labelledby="robusto-h3">
+          <h3 id="robusto-h3">Robusto</h3>
+          <p>HTML semántico + ARIA mínima y correcta. Ejemplo de acordeón con <code>aria-expanded</code> y <code>aria-controls</code>.</p>
+          <button class="btn" type="button" aria-expanded="false" aria-controls="p1" id="btn-acc">¿Qué es accesibilidad?</button>
+          <div id="p1" role="region" aria-labelledby="btn-acc" hidden>
+            <p>Es el diseño de productos y servicios utilizables por todas las personas, incluyendo quienes tienen discapacidad.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="justificacion-title">
+      <h2 id="justificacion-title">Justificación ética, legal y técnica de la accesibilidad</h2>
+      <p><strong>Ética:</strong> promueve inclusión y equidad digital.
+        <strong>Legal:</strong> alinea el desarrollo con WCAG y normativa nacional (p. ej., Ley 7600 en Costa Rica).
+        <strong>Técnica:</strong> mejora compatibilidad (navegadores/lectores), SEO y mantenibilidad del código.</p>
+    </section>
+
+  </main>
+
+  <footer class="container" role="contentinfo">
+    <hr />
+    <p><strong>Referencias</strong></p>
+    <p>https://developers.google.com/search/blog/2018/01/using-page-speed-in-mobile-search?hl=es </p>
+    <p>https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=es  </p>
+    <p>https://www.interaction-design.org/literature/topics/user-centered-design </p>
+    <p>https://www.interaction-design.org/literature/topics/user-centered-design</p>
+  </footer>
+
+  <!-- ======== JS: Validación accesible + Atajos (Eficiencia) ======== -->
+  <script>
+    // Atajo Alt+K para enfocar la búsqueda (Flexibilidad y eficiencia)
+    const inputBusqueda = document.getElementById('q');
+    document.addEventListener('keydown', (e)=>{
+      if(e.altKey && (e.key === 'k' || e.key === 'K')){
+        e.preventDefault();
+        inputBusqueda?.focus();
+      }
+    });
+
+    // Validación comprensible con aria-live
+    const frm = document.getElementById('frm');
+    frm?.addEventListener('submit', (e)=>{
+      const email = document.getElementById('email');
+      const err = document.getElementById('err-email');
+      err.textContent='';
+      email.removeAttribute('aria-invalid');
+      if(!email.checkValidity()){
+        e.preventDefault();
+        email.setAttribute('aria-invalid','true');
+        err.textContent='Por favor, ingresa un correo válido.';
+        email.focus();
+      }
+    });
+
+    // Demostración de foco visible (Operable)
+    document.getElementById('demo-foco')?.addEventListener('click',()=>{
+      document.getElementById('demo-foco').blur();
+      document.getElementById('atajo').focus();
+    });
+
+    // Acordeón robusto (WCAG Robusto)
+    const btnAcc = document.getElementById('btn-acc');
+    const panel = document.getElementById('p1');
+    btnAcc?.addEventListener('click', ()=>{
+      const expanded = btnAcc.getAttribute('aria-expanded') === 'true';
+      btnAcc.setAttribute('aria-expanded', String(!expanded));
+      panel.hidden = expanded;
+    });
+  </script>
+</body>
+</html>
